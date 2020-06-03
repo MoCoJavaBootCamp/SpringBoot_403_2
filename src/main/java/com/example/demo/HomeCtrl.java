@@ -16,6 +16,11 @@ public class HomeCtrl {
         return "login";
     }
 
+    @RequestMapping("/logout")
+    public String logout() {
+        return "redirect:/login?logout=true";
+    }
+
     @RequestMapping("/admin")
     public String admin() {
         return "admin";

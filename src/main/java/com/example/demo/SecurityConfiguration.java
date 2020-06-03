@@ -22,9 +22,10 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .antMatchers("/**").hasAnyRole("ADMIN", "USER")
                 .and()
                 .formLogin()
-                .loginPage("/login").permitAll();
-//                .logout()
-//                .logoutSuccessUrl("/login?logout=true").permitAll();
+                .loginPage("/login").permitAll()
+                .and()
+                .logout()
+                .logoutSuccessUrl("/login?logout=true").permitAll();
     }
 
     @Autowired
